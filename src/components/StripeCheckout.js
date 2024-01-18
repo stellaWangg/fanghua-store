@@ -10,7 +10,6 @@ import {
 import axios from "axios";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
-import { formatPrice } from "../utils/helpers";
 import { useNavigate } from "react-router-dom";
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
@@ -98,7 +97,7 @@ const CheckoutForm = () => {
       ) : (
         <article>
           <h4>Hello, {myUser && myUser.name}</h4>
-          <p>Your total is {formatPrice(shipping_fee + total_amount)}</p>
+          <p>Your total is ¥{shipping_fee + total_amount}</p>
           <p>Test card number : 4242 4242 4242 4242</p>
         </article>
       )}

@@ -8,12 +8,12 @@ import {
 
 const cart_reducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
-    const { id, amount, color, product } = action.payload;
-    const currentItem = state.cart.find((item) => item.id === id + color);
+    const { id, amount, product } = action.payload;
+    const currentItem = state.cart.find((item) => item.id === id);
     //if the item already in the cart
     if (currentItem) {
       const currCart = state.cart.map((cartItem) => {
-        if (cartItem.id === id + color) {
+        if (cartItem.id === id) {
           let newAmount = cartItem.amount + amount;
           if (newAmount > cartItem.max) {
             //check if the amount is bigger than stock
@@ -29,9 +29,9 @@ const cart_reducer = (state, action) => {
     //if the item is not in the cart
     else {
       const newItem = {
-        id: id + color,
+        id: id,
         name: product.name,
-        color,
+
         amount,
         image: product.images[0].url,
         price: product.price,

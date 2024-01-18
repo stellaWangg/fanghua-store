@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { formatPrice } from "../utils/helpers";
 import { Link } from "react-router-dom";
 const ListView = ({ products }) => {
+  console.log(products);
   return (
     <Wrapper>
       {products.map((product) => {
-        const { id, image, description, price, name } = product;
+        const { id, url, desc, price, name } = product;
         return (
           <article key={id}>
-            <img src={image} alt={name}></img>
+            <img src={url} alt={name}></img>
             <div>
               <h4>{name}</h4>
-              <h5 className="price">{formatPrice(price)}</h5>
-              <p>{description.substring(0, 120)}...</p>
+              <h5 className="price">¥{price}</h5>
+              <p>{desc.substring(0, 120)}...</p>
               <Link to={`/products/${id}`} className="btn">
                 Details
               </Link>
@@ -33,7 +33,7 @@ const Wrapper = styled.section`
     width: 100%;
     display: block;
     width: 300px;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     border-radius: var(--radius);
     margin-bottom: 1rem;
@@ -42,16 +42,17 @@ const Wrapper = styled.section`
     margin-bottom: 0.5rem;
   }
   .price {
-    color: var(--clr-primary-6);
+    color: var(--clr-primary-5);
     margin-bottom: 0.75rem;
   }
   p {
     max-width: 45em;
     margin-bottom: 1rem;
+    letter-spacing: 1.4px;
   }
   .btn {
-    font-size: 0.5rem;
-    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
   }
   @media (min-width: 992px) {
     article {

@@ -36,21 +36,24 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
   const fetchProducts = async (url) => {
+    console.log(url);
     dispatch({ type: GET_PRODUCTS_BEGIN });
     try {
       const resp = await axios.get(url);
       const products = resp.data;
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
-      console.log(resp);
     } catch (error) {
       dispatch({ type: GET_PRODUCTS_ERROR });
     }
   };
   const fetchSingleProduct = async (url) => {
+    console.log(url);
     dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
     try {
       const resp = await axios.get(url);
+      console.log(resp);
       const singleProduct = resp.data;
+
       dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct });
     } catch (error) {
       dispatch({ type: GET_SINGLE_PRODUCT_ERROR });

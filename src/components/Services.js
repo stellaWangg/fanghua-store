@@ -8,15 +8,13 @@ const Services = () => {
       <div className="section-center">
         <article className="header">
           <h3>
-            custom furniture
+            Our Services
             <br />
-            built only for ya
+            Provide Only For You
           </h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-            excepturi, doloremque doloribus cupiditate nostrum dolorum similique
-            tempore placeat. Eligendi laboriosam quisquam fuga sed facere
-            inventore similique animi tenetur? Facere, ab.
+            Below are the main services we provide. Please feel free to contact
+            us to learn more!
           </p>
         </article>
         <div className="services-center">
@@ -43,7 +41,7 @@ const Wrapper = styled.section`
   }
   padding: 5rem 0;
 
-  background: var(--clr-primary-10);
+  background: var(--clr-primary-7);
 
   .header h3 {
     margin-bottom: 2rem;
@@ -52,6 +50,7 @@ const Wrapper = styled.section`
     margin-bottom: 0;
     line-height: 1.8;
     color: var(--clr-primary-3);
+    font-size: 1.2rem;
   }
   .services-center {
     margin-top: 4rem;
@@ -59,7 +58,7 @@ const Wrapper = styled.section`
     gap: 2.5rem;
   }
   .service {
-    background: var(--clr-primary-7);
+    background: var(--clr-primary-10);
     text-align: center;
     padding: 2.5rem 2rem;
     border-radius: var(--radius);

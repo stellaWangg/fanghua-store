@@ -1,21 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
-import { getUniqueValues, formatPrice } from "../utils/helpers";
-import { FaCheck } from "react-icons/fa";
+import { getUniqueValues } from "../utils/helpers";
 
 const Filters = () => {
   const {
-    filters: {
-      text,
-      category,
-      color,
-      company,
-      min_price,
-      price,
-      max_price,
-      shipping,
-    },
+    filters: { text, category, company, min_price, price, max_price },
     updateFilters,
     clearFilters,
     all_products,
@@ -23,7 +13,6 @@ const Filters = () => {
 
   const categories = getUniqueValues(all_products, "category");
   const companies = getUniqueValues(all_products, "company");
-  const colors = getUniqueValues(all_products, "colors");
 
   return (
     <Wrapper>
@@ -80,47 +69,10 @@ const Filters = () => {
               })}
             </select>
           </div>
-          {/* colors */}
-          <div className="form-control">
-            <h5>Colors</h5>
-            <div className="colors">
-              {colors.map((c, index) => {
-                if (c === "all") {
-                  return (
-                    <button
-                      key={index}
-                      onClick={updateFilters}
-                      name="color"
-                      data-color="all"
-                      className={`${
-                        color === "all" ? "all-btn active" : "all-btn"
-                      }`}
-                    >
-                      All
-                    </button>
-                  );
-                }
-                return (
-                  <button
-                    style={{ background: c }}
-                    key={index}
-                    name="color"
-                    onClick={updateFilters}
-                    className={`${
-                      c === color ? "color-btn active" : "color-btn"
-                    }`}
-                    data-color={c}
-                  >
-                    {c === color ? <FaCheck /> : null}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
           {/* price */}
           <div className="form-control">
             <h5>price</h5>
-            <p className="price">{formatPrice(price)}</p>
+            <p className="price">¥{price}</p>
             <input
               type="range"
               name="price"
@@ -128,17 +80,6 @@ const Filters = () => {
               min={min_price}
               max={max_price}
               value={price}
-            />
-          </div>
-          {/* shippin */}
-          <div className="form-control shipping">
-            <label htmlFor="shipping">free shipping</label>
-            <input
-              type="checkbox"
-              name="shipping"
-              id="shipping"
-              onChange={updateFilters}
-              checked={shipping}
             />
           </div>
         </form>

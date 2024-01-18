@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utils/constants";
-import { formatPrice } from "../utils/helpers";
 import {
   Loading,
   Error,
@@ -16,6 +15,8 @@ import { Link } from "react-router-dom";
 
 const SingleProductPage = () => {
   const { id } = useParams();
+
+  console.log(`${url}${id}`);
   const navigate = useNavigate();
   const {
     single_product_loading: loading,
@@ -44,17 +45,15 @@ const SingleProductPage = () => {
   }
   const {
     company,
-    description,
+    desc,
     name,
     price,
     reviews,
-
     stars,
     stock,
     images,
     id: ID,
   } = product;
-
   return (
     <Wrapper>
       <PageHero title={name} product />
@@ -67,8 +66,8 @@ const SingleProductPage = () => {
           <section className="content">
             <h2>{name}</h2>
             <Stars stars={stars} reviews={reviews} />
-            <h5 className="price">{formatPrice(price)}</h5>
-            <p className="desc">{description}</p>
+            <h5 className="price">¥{price}</h5>
+            <p className="desc">{desc}</p>
             <p className="info">
               <span>Available : </span>
               {stock > 0 ? "In stock" : "out of stock"}

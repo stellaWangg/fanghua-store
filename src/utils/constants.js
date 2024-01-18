@@ -1,47 +1,46 @@
-import React from 'react'
-import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi'
+import React from "react";
+import { FaPrint, FaBoxOpen, FaPaintRoller } from "react-icons/fa";
 export const links = [
   {
     id: 1,
-    text: 'home',
-    url: '/',
+    text: "home",
+    url: "/",
   },
   {
     id: 2,
-    text: 'about',
-    url: '/about',
+    text: "about",
+    url: "/about",
   },
   {
     id: 3,
-    text: 'products',
-    url: '/products',
+    text: "products",
+    url: "/products",
   },
-]
+];
 
 export const services = [
   {
     id: 1,
-    icon: <GiCompass />,
-    title: 'mission',
-    text:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+    icon: <FaPrint />,
+    title: "Print",
+    text: "Our company offers a wide range of print services, including business cards, flyers, brochures, posters, and banners.",
   },
   {
     id: 2,
-    icon: <GiDiamondHard />,
-    title: 'vision',
-    text:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+    icon: <FaPaintRoller />,
+    title: "Design",
+    text: "Our team of experienced designers will work with you to create custom designs that accurately reflect your brand and effectively communicate your message.",
   },
   {
     id: 3,
-    icon: <GiStabbedNote />,
-    title: 'history',
-    text:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+    icon: <FaBoxOpen />,
+    title: "Retail",
+    text: "In our retail section, we offer a variety of products, including office supplies, and amenities to ensure that your workplace is fully equipped and functional.",
   },
-]
+];
 
-export const products_url = 'https://course-api.com/react-store-products'
+// export const products_url = "https://course-api.com/react-store-products";
+export const products_url =
+  "https://fanghua-paper.netlify.app/.netlify/functions/products";
 
-export const single_product_url = `https://course-api.com/react-store-single-product?id=`
+export const single_product_url = `https://fanghua-paper.netlify.app/.netlify/functions/products?id=`;

@@ -1,28 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import heroBcg from "../assets/hero-bcg.jpeg";
-import heroBcg2 from "../assets/hero-bcg-2.jpeg";
+import hero from "../assets/hero.jpg";
 
 const Hero = () => {
   return (
     <Wrapper className="section-center">
       <article className="content">
         <h1>
-          design your <br />
-          comfort zone
+          Quality products <br />
+          for your office.
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure
-          quasi odit tenetur unde officiis repudiandae quod deserunt quia eum?
+          Welcome to Fanghua Paper Company, where quality meets your stationery
+          and design needs.
         </p>
         <Link to="/products" className="btn hero-btn">
           shop now
         </Link>
       </article>
       <article className="img-container">
-        <img src={heroBcg} alt="nice table" className="main-img" />
-        <img src={heroBcg2} alt="person working" className="accent-img" />
+        <img src={hero} alt="office" className="main-img" />
       </article>
     </Wrapper>
   );
@@ -49,6 +47,7 @@ const Wrapper = styled.section`
     gap: 8rem;
     h1 {
       margin-bottom: 2rem;
+      font-family: "Lexend", sans-serif;
     }
     p {
       font-size: 1.25rem;
@@ -63,26 +62,19 @@ const Wrapper = styled.section`
     }
     .main-img {
       width: 100%;
-      height: 550px;
+      height: 600px;
       position: relative;
       border-radius: var(--radius);
       display: block;
       object-fit: cover;
     }
-    .accent-img {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 250px;
-      transform: translateX(-50%);
-      border-radius: var(--radius);
-    }
     .img-container::before {
       content: "";
       position: absolute;
-      width: 10%;
+      width: 20%;
       height: 80%;
-      background: var(--clr-primary-9);
+      // background: var(--clr-primary-1);
+      background: rgba(190, 10, 10, 255);
       bottom: 0%;
       left: -8%;
       border-radius: var(--radius);

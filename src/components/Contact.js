@@ -5,13 +5,12 @@ const Contact = () => {
   return (
     <Wrapper>
       <div className="section-center">
-        <h3>Join our newsletter and get 20% off</h3>
+        <h3>Join our newsletter and get 10% off</h3>
         <div className="content">
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
-            incidunt inventore atque, quia nulla quae aspernatur eveniet! Animi
-            fugiat minima aliquid vel dolor nisi harum, totam magni, dolorem
-            quam optio.
+            Stay in the loop with Fanghua Company! Subscribe to our newsletter
+            for exciting updates, special offers, and an immediate 10% discount
+            on your initial purchase.
           </p>
           <form
             action="https://formspree.io/f/xjvnbgpa"

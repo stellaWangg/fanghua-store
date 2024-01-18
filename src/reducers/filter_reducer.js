@@ -13,7 +13,6 @@ const filter_reducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
     let maxPrice = action.payload.map((p) => p.price);
     maxPrice = Math.max(...maxPrice);
-    console.log(maxPrice);
     return {
       ...state,
       all_products: [...action.payload],
@@ -69,7 +68,7 @@ const filter_reducer = (state, action) => {
   }
   if (action.type === FILTER_PRODUCTS) {
     const { all_products } = state;
-    const { text, category, company, color, price, shipping } = state.filters;
+    const { text, category, company, price } = state.filters;
 
     let currentProducts = [...all_products];
 
@@ -88,20 +87,11 @@ const filter_reducer = (state, action) => {
         return product.company.toLowerCase() === company;
       });
     }
-    if (color !== "all") {
-      currentProducts = currentProducts.filter((product) => {
-        return product.colors.includes(color);
-      });
-    }
+
     if (price) {
       currentProducts = currentProducts.filter((product) => {
         return product.price <= price;
       });
-    }
-    if (shipping) {
-      currentProducts = currentProducts.filter(
-        (product) => product.shipping === true
-      );
     }
 
     return { ...state, filtered_products: currentProducts };
@@ -114,9 +104,7 @@ const filter_reducer = (state, action) => {
         ...state.filters,
         company: "all",
         category: "all",
-        color: "all",
         price: state.filters.max_price,
-        shipping: false,
       },
     };
   }
