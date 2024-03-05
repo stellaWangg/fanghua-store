@@ -39,7 +39,6 @@ export const services = [
   },
 ];
 
-// export const products_url = "https://course-api.com/react-store-products";
 export const products_url =
   "https://fanghua-paper.netlify.app/.netlify/functions/products";
 
