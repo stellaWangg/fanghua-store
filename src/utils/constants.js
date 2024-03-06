@@ -38,7 +38,7 @@ export const services = [
     text: "In our retail section, we offer a variety of products, including office supplies, and amenities to ensure that your workplace is fully equipped and functional.",
   },
 ];
+export const products_url = "https://fanghua-paper.netlify.app/api/products";
 
-export const products_url = "https://fanghua.netlify.app/api/products";
+export const single_product_url = `https://fanghua-paper.netlify.app/api/products?id=`;
 
-export const single_product_url = `https://fanghua.netlify.app/api/products?id=`;
