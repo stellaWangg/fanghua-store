@@ -39,7 +39,6 @@ export const services = [
   },
 ];
 
-export const products_url =
-  "https://fanghua-paper.netlify.app/.netlify/functions/products";
+export const products_url = "/api/products";
 
-export const single_product_url = `https://fanghua-paper.netlify.app/.netlify/functions/products?id=`;
+export const single_product_url = `/api/products?id=`;

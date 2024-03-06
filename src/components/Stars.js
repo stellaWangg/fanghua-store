@@ -19,8 +19,6 @@ const Stars = ({ stars, reviews }) => {
       //  end of star
     );
   });
-
-  console.log(stars, reviews);
   return (
     <Wrapper>
       <div className="stars">{checkStars}</div>

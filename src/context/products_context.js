@@ -36,7 +36,6 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
   const fetchProducts = async (url) => {
-    console.log(url);
     dispatch({ type: GET_PRODUCTS_BEGIN });
     try {
       const resp = await axios.get(url);
@@ -47,7 +46,6 @@ export const ProductsProvider = ({ children }) => {
     }
   };
   const fetchSingleProduct = async (url) => {
-    console.log(url);
     dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
     try {
       const resp = await axios.get(url);
